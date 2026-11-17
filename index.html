@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Moduler sa carrière · le guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,700&family=Rubik:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1F2A37;--paper:#FBF8F3;--muted:#586271;--line:#E5DED3;--or:#EA5B0B;--or2:#C2410C;
+--p1:#0F766E;--p1b:#E3F4F1;--p2:#C2410C;--p2b:#FDEEE4;--p3:#1D4ED8;--p3b:#E8EEFB;--p4:#9D174D;--p4b:#FBE8F0;--ps:#6D28D9;--psb:#F0EAFD;--pc:#B45309;--pcb:#FDF3E1}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--paper);color:var(--ink);font-family:"Nunito Sans",system-ui,sans-serif;font-size:17px;line-height:1.45}
+h1,h2,h3,.rub{font-family:Rubik,system-ui,sans-serif}
+a{color:var(--p3)}
+button{font:inherit;cursor:pointer}
+.top{background:var(--ink);color:#fff;position:relative}
+.top:after{content:"";position:absolute;left:0;right:0;bottom:0;height:5px;background:linear-gradient(90deg,var(--p1) 0 25%,var(--or) 25% 50%,var(--p3) 50% 75%,var(--p4) 75%)}
+.top-in{max-width:880px;margin:0 auto;padding:18px 20px 22px;display:flex;align-items:center;gap:16px}
+.top h1{margin:0;font-size:26px;line-height:1.1;cursor:pointer}
+.top p{margin:4px 0 0;color:#FDBA74;font-weight:600;font-size:15px}
+.logo{margin-left:auto;background:#fff;border-radius:10px;padding:6px 8px;height:54px;flex:none}
+.logo svg{height:100%;width:auto;display:block}
+.bar{max-width:880px;margin:0 auto;padding:14px 20px 0;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.bar button{border:1.5px solid var(--line);background:#fff;border-radius:999px;padding:8px 16px;font-weight:700;color:var(--ink)}
+.bar button:hover{border-color:var(--or)}
+.bar .fiche{margin-left:auto;background:var(--ink);color:#fff;border-color:var(--ink)}
+.bar .fiche b{background:var(--or);border-radius:999px;padding:0 8px;margin-left:6px}
+.crumbs{max-width:880px;margin:10px auto 0;padding:0 20px;display:flex;flex-wrap:wrap;gap:6px;font-size:14px;color:var(--muted)}
+.crumbs span{background:#fff;border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+main{max-width:880px;margin:0 auto;padding:16px 20px 60px}
+.step{animation:in .35s ease both}
+@keyframes in{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+.q{font-size:28px;margin:10px 0 6px;line-height:1.2}
+.qs{color:var(--muted);margin:0 0 18px}
+.opts{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px}
+.opt{display:flex;flex-direction:column;align-items:flex-start;text-align:left;gap:4px;background:#fff;border:2px solid var(--line);border-left:8px solid var(--c,var(--or));border-radius:14px;padding:16px 18px;transition:transform .15s,box-shadow .15s,border-color .15s;min-height:86px;color:var(--ink)}
+.opt:hover,.opt:focus-visible{transform:translateY(-2px);box-shadow:0 10px 24px rgba(31,42,55,.10);border-color:var(--c,var(--or));outline:none}
+.opt b{font-family:Rubik,system-ui,sans-serif;font-size:19px;font-weight:600;line-height:1.2}
+.opt span{font-size:14.5px;color:var(--muted)}
+.opt.big{min-height:120px;background:var(--cb,#fff)}
+.opt.big .n{font-family:Rubik,system-ui,sans-serif;font-weight:800;font-size:15px;color:#fff;background:var(--c);border-radius:999px;padding:2px 10px;margin-bottom:4px}
+.intro{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px 18px;margin:6px 0 20px;font-size:15.5px}
+.res-h{font-size:26px;margin:10px 0 4px}
+.cards{display:flex;flex-direction:column;gap:16px;margin-top:14px}
+.card{background:#fff;border:1.5px solid var(--line);border-radius:16px;overflow:hidden}
+.card header{background:var(--cb);border-bottom:1px solid var(--line);padding:14px 18px;display:flex;gap:12px;align-items:flex-start;flex-wrap:wrap}
+.card h3{margin:0;font-size:21px;color:var(--c);flex:1 1 300px}
+.card .en{flex-basis:100%;margin:2px 0 0;color:var(--ink);font-size:15.5px}
+.pills{display:flex;flex-wrap:wrap;gap:8px;padding:12px 18px 0}
+.pill{border-radius:999px;padding:5px 12px;font-weight:700;font-size:14.5px}
+.pill.pay{background:var(--c);color:#fff}
+.pill.droit{background:#E6F4EA;color:#166534}
+.pill.auto{background:#FDF3E1;color:#92400E}
+.card .body{padding:8px 18px 16px}
+.card h4{font-family:Rubik,system-ui,sans-serif;font-size:15px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted);margin:14px 0 4px}
+.card ul,.card ol{margin:0;padding-left:20px}.card li{margin:3px 0}
+.ex{background:var(--paper);border-left:4px solid var(--c);border-radius:8px;padding:10px 14px;margin-top:12px;font-size:15.5px}
+.warn{background:#FEF2F2;border-left:4px solid #DC2626;border-radius:8px;padding:10px 14px;margin-top:12px;font-size:15.5px}
+.card .act{display:flex;gap:10px;flex-wrap:wrap;align-items:center;padding:0 18px 16px}
+.add{border:2px solid var(--c);background:#fff;color:var(--c);border-radius:999px;padding:8px 16px;font-weight:700}
+.add.on{background:var(--c);color:#fff}
+.link{font-weight:700}
+.calc{background:var(--cb);border-radius:12px;padding:12px 14px;margin-top:12px}
+.calc .row{display:flex;flex-wrap:wrap;gap:10px;align-items:end}
+.calc label{display:flex;flex-direction:column;font-size:13.5px;font-weight:700;color:var(--muted);gap:3px}
+.calc input,.calc select{font:inherit;font-size:16px;padding:7px 10px;border:1.5px solid var(--line);border-radius:8px;width:140px;background:#fff;color:var(--ink)}
+.calc .out{font-family:Rubik,system-ui,sans-serif;font-weight:700;font-size:19px;color:var(--c);margin-top:8px}
+.calc .out small{display:block;font-family:"Nunito Sans",system-ui,sans-serif;font-weight:600;font-size:14px;color:var(--muted)}
+.next{margin-top:22px;display:flex;gap:10px;flex-wrap:wrap}
+.next button{border:2px solid var(--line);background:#fff;border-radius:12px;padding:10px 16px;font-weight:700}
+.next button.pri{background:var(--or);border-color:var(--or);color:#fff}
+.foot{max-width:880px;margin:0 auto;padding:0 20px 40px;color:var(--muted);font-size:13.5px}
+.modal{position:fixed;inset:0;background:rgba(15,20,28,.55);display:none;align-items:flex-start;justify-content:center;padding:30px 14px;overflow:auto;z-index:10}
+.modal.show{display:flex}
+.sheet{background:#fff;border-radius:18px;max-width:760px;width:100%;padding:22px 24px}
+.sheet h2{margin:0 0 6px}
+.sheet .it{border-left:6px solid var(--c);padding:8px 12px;margin:10px 0;background:var(--paper);border-radius:8px}
+.sheet .it b{font-family:Rubik}
+.sheet textarea{width:100%;min-height:80px;font:inherit;border:1.5px solid var(--line);border-radius:10px;padding:10px}
+.sheet .btns{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+.sheet .btns button{border:0;border-radius:10px;padding:10px 16px;font-weight:700;background:var(--paper)}
+.sheet .btns .pri{background:var(--ink);color:#fff}
+.toast{position:fixed;left:50%;bottom:20px;transform:translateX(-50%);background:var(--ink);color:#fff;padding:10px 18px;border-radius:999px;font-weight:700;opacity:0;transition:opacity .3s;pointer-events:none;z-index:20}
+.toast.show{opacity:1}
+@media (max-width:560px){.q{font-size:23px}.top h1{font-size:21px}.logo{height:42px}.opts{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){.step{animation:none}.opt{transition:none}}
+</style>
+</head>
+<body>
+<div class="top"><div class="top-in"><div><h1 id="home">Moduler sa carrière</h1><p>Le guide : répondez aux questions, il vous montre vos droits</p></div><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="32 28 312 168" aria-label="CFDT Picardie Éducation">
+<path fill-rule="nonzero" fill="rgb(91.764832%, 35.68573%, 4.31366%)" fill-opacity="1" d="M 198.761719 111.972656 C 198.761719 157.585938 161.777344 194.574219 116.160156 194.574219 C 70.542969 194.574219 33.558594 157.585938 33.558594 111.972656 C 33.558594 66.355469 70.542969 29.367188 116.160156 29.367188 C 161.777344 29.367188 198.761719 66.355469 198.761719 111.972656 "/>
+<path fill-rule="nonzero" fill="rgb(100%, 100%, 100%)" fill-opacity="1" d="M 95.363281 100.777344 L 95.363281 102.601562 L 92.105469 102.601562 L 92.105469 110.261719 L 95.363281 110.261719 L 95.363281 131.988281 L 105.113281 131.988281 L 105.113281 110.261719 L 108.796875 110.261719 L 108.796875 102.601562 L 105.113281 102.601562 L 105.113281 101.144531 C 105.113281 99.214844 106.472656 98.925781 107.28125 98.925781 L 108.796875 98.925781 L 108.796875 91.304688 L 107.023438 91.304688 C 104.136719 91.304688 95.363281 91.304688 95.363281 100.777344 "/>
+<path fill-rule="nonzero" fill="rgb(100%, 100%, 100%)" fill-opacity="1" d="M 163.070312 91.304688 L 153.109375 91.304688 L 153.109375 102.601562 L 149.847656 102.601562 L 149.847656 110.261719 L 153.109375 110.261719 L 153.109375 121.785156 C 153.109375 128.785156 157.023438 132.328125 164.765625 132.328125 L 166.539062 132.328125 L 166.539062 124.730469 L 165.023438 124.730469 C 164.132812 124.730469 163.070312 124.339844 163.070312 122.511719 L 163.070312 110.261719 L 166.539062 110.261719 L 166.539062 102.601562 L 163.070312 102.601562 Z M 163.070312 91.304688 "/>
+<path fill-rule="nonzero" fill="rgb(100%, 100%, 100%)" fill-opacity="1" d="M 134.734375 91.304688 L 134.734375 104.390625 L 134.503906 104.074219 C 133.378906 102.546875 130.699219 100.921875 126.550781 100.921875 C 119.167969 100.921875 111.707031 106.375 111.707031 116.808594 C 111.707031 126.027344 117.878906 132.46875 126.707031 132.46875 C 131.109375 132.46875 133.832031 130.789062 134.921875 129.226562 L 135.152344 128.886719 L 135.152344 131.988281 L 144.667969 131.988281 L 144.667969 91.304688 Z M 128.132812 123.886719 C 124.117188 123.886719 121.210938 120.886719 121.210938 116.75 C 121.210938 113.96875 123.082031 109.832031 128.230469 109.832031 C 132.757812 109.832031 135.207031 113.398438 135.207031 116.75 C 135.207031 119.625 133.316406 123.886719 128.132812 123.886719 "/>
+<path fill-rule="nonzero" fill="rgb(100%, 100%, 100%)" fill-opacity="1" d="M 175.144531 102.527344 L 175.144531 112.1875 L 185.089844 112.191406 L 185.089844 102.527344 Z M 175.144531 102.527344 "/>
+<path fill-rule="nonzero" fill="rgb(100%, 100%, 100%)" fill-opacity="1" d="M 175.144531 131.96875 L 185.09375 131.96875 L 185.09375 122.308594 L 175.144531 122.308594 Z M 175.144531 131.96875 "/>
+<path fill-rule="nonzero" fill="rgb(100%, 100%, 100%)" fill-opacity="1" d="M 78.476562 116.792969 C 77.234375 120.300781 74.691406 122.90625 71.5 123.953125 C 71.398438 123.988281 71.300781 124.015625 71.199219 124.042969 L 70.863281 124.140625 C 70.746094 124.175781 70.628906 124.214844 70.511719 124.238281 C 69.703125 124.421875 68.910156 124.507812 68.128906 124.515625 L 68.023438 124.503906 C 67.609375 124.503906 67.207031 124.480469 66.726562 124.421875 C 66.351562 124.378906 65.988281 124.320312 65.636719 124.238281 L 65.527344 124.214844 C 65.171875 124.132812 64.832031 124.03125 64.527344 123.929688 L 64.414062 123.894531 C 64.0625 123.761719 63.722656 123.621094 63.398438 123.460938 L 63.296875 123.410156 C 63.058594 123.289062 62.816406 123.15625 62.585938 123.015625 C 58.996094 120.859375 56.761719 116.625 56.761719 111.941406 C 56.761719 107.507812 59.199219 101.925781 64.535156 100.175781 C 64.644531 100.132812 64.757812 100.109375 64.867188 100.070312 L 65.164062 99.988281 C 65.285156 99.957031 65.40625 99.917969 65.53125 99.886719 C 66.316406 99.710938 67.179688 99.589844 68.019531 99.613281 C 68.429688 99.613281 68.828125 99.640625 69.214844 99.6875 L 69.320312 99.707031 C 69.695312 99.742188 70.058594 99.804688 70.40625 99.882812 L 70.515625 99.917969 C 70.875 100 71.210938 100.09375 71.625 100.238281 C 71.976562 100.363281 72.320312 100.5 72.644531 100.65625 L 72.761719 100.726562 C 73.003906 100.84375 73.230469 100.972656 73.457031 101.117188 C 75.757812 102.488281 77.527344 104.785156 78.484375 107.539062 L 88.496094 107.539062 C 88.414062 107.199219 88.339844 106.859375 88.242188 106.523438 C 88.132812 106.15625 88.011719 105.804688 87.894531 105.449219 C 85.265625 97.832031 78.398438 92.34375 70.40625 91.484375 C 68.785156 91.304688 67.433594 91.304688 65.84375 91.488281 C 53.753906 92.683594 47.230469 102.960938 47.230469 112.015625 L 47.238281 112.140625 C 47.304688 122.214844 55.179688 132.640625 68.25 132.640625 C 78.023438 132.640625 86.121094 126.386719 88.402344 117.085938 L 88.566406 116.449219 L 78.605469 116.449219 Z M 78.476562 116.792969 "/>
+<path fill-rule="nonzero" fill="rgb(91.764832%, 35.68573%, 4.31366%)" fill-opacity="1" d="M 217.183594 117.953125 C 219.300781 117.828125 220.917969 116.292969 220.917969 112.769531 L 220.917969 112.6875 C 220.917969 108.996094 219.507812 107.421875 217.308594 107.421875 L 217.140625 107.421875 L 217.140625 117.953125 Z M 212.085938 102.738281 L 216.605469 102.738281 C 222.117188 102.738281 225.976562 105.722656 225.976562 112.523438 L 225.976562 112.605469 C 225.976562 119.15625 222.324219 122.265625 217.183594 122.636719 L 217.140625 122.636719 L 217.140625 131.761719 L 212.085938 131.761719 Z M 212.085938 102.738281 "/>
+<path fill-rule="nonzero" fill="rgb(91.764832%, 35.68573%, 4.31366%)" fill-opacity="1" d="M 228.132812 102.734375 L 233.191406 102.734375 L 233.191406 131.757812 L 228.132812 131.757812 Z M 228.132812 102.734375 "/>
+<path fill-rule="nonzero" fill="rgb(91.764832%, 35.68573%, 4.31366%)" fill-opacity="1" d="M 235.761719 117.746094 L 235.761719 116.75 C 235.761719 106.550781 239.535156 102.527344 244.261719 102.527344 C 245.675781 102.527344 246.503906 102.695312 247.578125 103.191406 L 247.578125 108.417969 C 246.542969 107.792969 245.714844 107.460938 244.761719 107.460938 C 242.523438 107.460938 240.902344 109.453125 240.902344 116.710938 L 240.902344 117.789062 C 240.902344 125.457031 242.523438 127.035156 244.84375 127.035156 C 245.632812 127.035156 246.625 126.742188 247.664062 126.121094 L 247.664062 131.097656 C 246.503906 131.761719 245.382812 131.96875 243.929688 131.96875 C 239.289062 131.96875 235.761719 127.863281 235.761719 117.746094 "/>
+<path fill-rule="nonzero" fill="rgb(91.764832%, 35.68573%, 4.31366%)" fill-opacity="1" d="M 258.40625 121.433594 L 256.871094 111.859375 L 255.292969 121.433594 Z M 254.257812 102.652344 L 259.648438 102.652344 L 265.164062 131.761719 L 260.105469 131.761719 L 259.152344 125.996094 L 254.546875 125.996094 L 253.636719 131.761719 L 248.742188 131.761719 Z M 254.257812 102.652344 "/>
+<path fill-rule="nonzero" fill="rgb(91.764832%, 35.68573%, 4.31366%)" fill-opacity="1" d="M 272.003906 117.082031 C 274.203125 117.082031 275.820312 115.796875 275.820312 112.398438 L 275.820312 112.066406 C 275.820312 108.417969 274.078125 107.460938 271.882812 107.460938 L 271.757812 107.460938 L 271.757812 117.082031 Z M 266.699219 102.738281 L 271.921875 102.738281 C 274.617188 102.738281 276.898438 103.484375 278.472656 105.058594 C 280.007812 106.589844 280.878906 108.832031 280.878906 111.980469 L 280.878906 112.355469 C 280.878906 116.128906 279.386719 118.535156 277.480469 119.984375 L 281.378906 131.761719 L 275.988281 131.761719 L 272.710938 121.640625 L 271.757812 121.640625 L 271.757812 131.761719 L 266.699219 131.761719 Z M 266.699219 102.738281 "/>
+<path fill-rule="nonzero" fill="rgb(91.764832%, 35.68573%, 4.31366%)" fill-opacity="1" d="M 288.261719 107.378906 L 288.261719 127.117188 L 288.46875 127.117188 C 290.875 127.117188 292.945312 125.003906 292.945312 117.746094 L 292.945312 116.75 C 292.945312 109.496094 290.875 107.378906 288.46875 107.378906 Z M 283.203125 102.738281 L 287.929688 102.738281 C 294.398438 102.738281 298.089844 107.421875 298.089844 116.75 L 298.089844 117.746094 C 298.089844 127.074219 294.398438 131.761719 287.929688 131.761719 L 283.203125 131.761719 Z M 283.203125 102.738281 "/>
+<path fill-rule="nonzero" fill="rgb(91.764832%, 35.68573%, 4.31366%)" fill-opacity="1" d="M 300.660156 102.734375 L 305.71875 102.734375 L 305.71875 131.757812 L 300.660156 131.757812 Z M 300.660156 102.734375 "/>
+<path fill-rule="nonzero" fill="rgb(91.764832%, 35.68573%, 4.31366%)" fill-opacity="1" d="M 308.789062 102.734375 L 319.902344 102.734375 L 319.902344 107.546875 L 313.847656 107.546875 L 313.847656 114.757812 L 319.195312 114.757812 L 319.195312 119.570312 L 313.847656 119.570312 L 313.847656 126.949219 L 320.023438 126.949219 L 320.023438 131.757812 L 308.789062 131.757812 Z M 308.789062 102.734375 "/>
+<path fill-rule="nonzero" fill="rgb(91.764832%, 35.68573%, 4.31366%)" fill-opacity="1" d="M 219.132812 135.304688 L 223.320312 137.378906 L 219.214844 140.570312 L 215.566406 140.570312 Z M 212.085938 142.023438 L 223.195312 142.023438 L 223.195312 146.832031 L 217.144531 146.832031 L 217.144531 154.046875 L 222.492188 154.046875 L 222.492188 158.855469 L 217.144531 158.855469 L 217.144531 166.238281 L 223.320312 166.238281 L 223.320312 171.046875 L 212.085938 171.046875 Z M 212.085938 142.023438 "/>
+<path fill-rule="nonzero" fill="rgb(91.764832%, 35.68573%, 4.31366%)" fill-opacity="1" d="M 230.828125 146.664062 L 230.828125 166.402344 L 231.035156 166.402344 C 233.441406 166.402344 235.511719 164.289062 235.511719 157.03125 L 235.511719 156.035156 C 235.511719 148.78125 233.441406 146.664062 231.035156 146.664062 Z M 225.769531 142.023438 L 230.496094 142.023438 C 236.964844 142.023438 240.652344 146.707031 240.652344 156.035156 L 240.652344 157.03125 C 240.652344 166.363281 236.964844 171.046875 230.496094 171.046875 L 225.769531 171.046875 Z M 225.769531 142.023438 "/>
+<path fill-rule="nonzero" fill="rgb(91.764832%, 35.68573%, 4.31366%)" fill-opacity="1" d="M 243.0625 162.589844 L 243.0625 142.023438 L 248.117188 142.023438 L 248.117188 163.085938 C 248.117188 165.695312 249.03125 166.691406 250.273438 166.691406 C 251.519531 166.691406 252.429688 165.695312 252.429688 163.085938 L 252.429688 142.023438 L 257.488281 142.023438 L 257.488281 162.589844 C 257.488281 168.679688 254.421875 171.417969 250.273438 171.417969 C 246.128906 171.417969 243.0625 168.679688 243.0625 162.589844 "/>
+<path fill-rule="nonzero" fill="rgb(91.764832%, 35.68573%, 4.31366%)" fill-opacity="1" d="M 259.898438 157.03125 L 259.898438 156.035156 C 259.898438 145.835938 263.667969 141.8125 268.398438 141.8125 C 269.804688 141.8125 270.636719 141.980469 271.714844 142.480469 L 271.714844 147.703125 C 270.675781 147.078125 269.847656 146.75 268.894531 146.75 C 266.65625 146.75 265.039062 148.738281 265.039062 155.996094 L 265.039062 157.074219 C 265.039062 164.742188 266.65625 166.320312 268.976562 166.320312 C 269.765625 166.320312 270.757812 166.027344 271.796875 165.40625 L 271.796875 170.382812 C 270.636719 171.046875 269.515625 171.253906 268.066406 171.253906 C 263.421875 171.253906 259.898438 167.148438 259.898438 157.03125 "/>
+<path fill-rule="nonzero" fill="rgb(91.764832%, 35.68573%, 4.31366%)" fill-opacity="1" d="M 282.539062 160.722656 L 281.003906 151.144531 L 279.425781 160.722656 Z M 278.390625 141.9375 L 283.78125 141.9375 L 289.296875 171.046875 L 284.238281 171.046875 L 283.285156 165.28125 L 278.679688 165.28125 L 277.769531 171.046875 L 272.875 171.046875 Z M 278.390625 141.9375 "/>
+<path fill-rule="nonzero" fill="rgb(91.764832%, 35.68573%, 4.31366%)" fill-opacity="1" d="M 292.285156 146.832031 L 288.71875 146.832031 L 288.71875 142.023438 L 300.90625 142.023438 L 300.90625 146.832031 L 297.339844 146.832031 L 297.339844 171.046875 L 292.285156 171.046875 Z M 292.285156 146.832031 "/>
+<path fill-rule="nonzero" fill="rgb(91.764832%, 35.68573%, 4.31366%)" fill-opacity="1" d="M 303.105469 142.023438 L 308.164062 142.023438 L 308.164062 171.046875 L 303.105469 171.046875 Z M 303.105469 142.023438 "/>
+<path fill-rule="nonzero" fill="rgb(91.764832%, 35.68573%, 4.31366%)" fill-opacity="1" d="M 321.019531 157.28125 L 321.019531 155.785156 C 321.019531 148.324219 319.984375 146.25 318.449219 146.25 C 316.914062 146.25 315.878906 148.324219 315.878906 155.785156 L 315.878906 157.28125 C 315.878906 164.742188 316.914062 166.816406 318.449219 166.816406 C 319.984375 166.816406 321.019531 164.742188 321.019531 157.28125 M 310.734375 157.28125 L 310.734375 155.785156 C 310.734375 146.210938 313.847656 141.609375 318.449219 141.609375 C 323.050781 141.609375 326.160156 146.210938 326.160156 155.785156 L 326.160156 157.28125 C 326.160156 166.859375 323.050781 171.460938 318.449219 171.460938 C 313.847656 171.460938 310.734375 166.859375 310.734375 157.28125 "/>
+<path fill-rule="nonzero" fill="rgb(91.764832%, 35.68573%, 4.31366%)" fill-opacity="1" d="M 328.652344 142.023438 L 333.335938 142.023438 L 338.5625 157.03125 L 338.5625 142.023438 L 343.414062 142.023438 L 343.414062 171.046875 L 338.976562 171.046875 L 333.503906 155.332031 L 333.503906 171.046875 L 328.652344 171.046875 Z M 328.652344 142.023438 "/>
+</svg>
+</div></div></div>
+<div class="bar"><button id="back">← Retour</button><button id="restart">Recommencer</button><button class="fiche" id="openFiche">Ma fiche <b id="nb">0</b></button></div>
+<div class="crumbs" id="crumbs"></div>
+<main id="main"></main>
+<div class="foot">Règles en vigueur au 17 novembre 2026 pour les enseignants titulaires de l'État, premier et second degré. Montants bruts, exemples inventés et arrondis. La page officielle de chaque dispositif fait foi ; les dates exactes de dépôt sont fixées chaque année par le rectorat d'Amiens ou la direction départementale. Une question sur votre situation : le syndicat vous répond et vous accompagne.</div>
+
+<div class="modal" id="modal"><div class="sheet">
+<h2 class="rub">Ma fiche</h2>
+<p style="margin:0;color:var(--muted)">Les dispositifs que vous avez gardés, avec la démarche à faire.</p>
+<div id="ficheList"></div>
+<h4 class="rub" style="margin:16px 0 6px">Ma prochaine démarche, ma question</h4>
+<textarea id="note" placeholder="Par exemple : lire la note de service sur le temps partiel avant janvier, poser ma question au syndicat…"></textarea>
+<div class="btns"><button class="pri" id="copy">Copier ma fiche</button><button id="clear">Vider</button><button id="close">Fermer</button></div>
+</div></div>
+<div class="toast" id="toast"></div>
+
+<script>
+var SP = "https://www.service-public.gouv.fr/particuliers/vosdroits/";
+var C = {p1:["var(--p1)","var(--p1b)"],p2:["var(--p2)","var(--p2b)"],p3:["var(--p3)","var(--p3b)"],p4:["var(--p4)","var(--p4b)"],ps:["var(--ps)","var(--psb)"],pc:["var(--pc)","var(--pcb)"]};
+
+/* ---------- les questions ---------- */
+var N = {
+ start:{q:"Quel est votre projet ?", s:"Choisissez ce qui ressemble le plus à votre situation. Vous pourrez revenir en arrière à tout moment.", big:true, o:[
+  {t:"Faire une pause",d:"M'arrêter quelques mois ou quelques années",c:"p1",n:"Porte 1",go:"p1"},
+  {t:"Travailler moins",d:"Temps partiel, retraite progressive",c:"p2",n:"Porte 2",go:"p2"},
+  {t:"Changer de métier",d:"Concours, spécialisation, encadrement, ailleurs",c:"p3",n:"Porte 3",go:"p3"},
+  {t:"Quitter l'Éducation nationale",d:"Rupture conventionnelle, démission",c:"p4",n:"Porte 4",go:"p4"},
+  {t:"Ma santé, un handicap",d:"Arrêt long, reprise, aménagements",c:"ps",n:"Santé",go:"sante"},
+  {t:"Une activité à côté",d:"Ai-je le droit de faire cette activité ?",c:"pc",n:"Cumul",go:"cumul"}]},
+ p1:{q:"Pour quelle raison voulez-vous faire une pause ?", c:"p1", o:[
+  {t:"Un bébé arrive ou vient de naître",go:"R:naissance,parental,tp_droit"},
+  {t:"Élever mon enfant",d:"Il a moins de 12 ans",go:"enfant"},
+  {t:"M'occuper d'un proche",d:"Malade, handicapé ou victime d'un accident",go:"R:dispo_droit,tp_droit"},
+  {t:"Suivre mon conjoint",d:"Il déménage pour son travail",go:"R:dispo_droit"},
+  {t:"Me soigner",go:"sante"},
+  {t:"Me former, me reconvertir",go:"R:cfp,cpf"},
+  {t:"Créer ou reprendre une entreprise",go:"R:dispo_ent,cumul_ent"},
+  {t:"Souffler, un projet personnel",d:"Sans avoir à donner de motif",go:"R:dispo_cp"}]},
+ enfant:{q:"Votre enfant a-t-il moins de 3 ans ?", c:"p1", o:[
+  {t:"Oui, moins de 3 ans",go:"R:parental,dispo_droit,tp_droit"},
+  {t:"Non, entre 3 et 12 ans",go:"R:dispo_droit,tp_auto"}]},
+ p2:{q:"Pourquoi voulez-vous travailler moins ?", c:"p2", o:[
+  {t:"J'ai un enfant de moins de 3 ans",go:"R:tp_droit"},
+  {t:"Je m'occupe d'un proche",d:"Handicap, maladie grave, accident",go:"R:tp_droit"},
+  {t:"Ma santé",go:"sante"},
+  {t:"J'ai un handicap reconnu",go:"R:tp_droit,rqth"},
+  {t:"Pour avoir une autre activité",go:"cumul"},
+  {t:"J'approche de la retraite",go:"retraite"},
+  {t:"Pour moi, sans motif particulier",go:"R:tp_auto"}]},
+ retraite:{q:"Avez-vous 60 ans et 150 trimestres de retraite ?", s:"Tous régimes confondus. Vous trouvez vos trimestres sur votre relevé de carrière, sur info-retraite.fr.", c:"p2", o:[
+  {t:"Oui, les deux",go:"R:retraite_prog,tp_auto"},
+  {t:"Non, ou je ne sais pas",go:"R:tp_auto,retraite_prog"}]},
+ sante:{q:"Quelle est votre situation ?", s:"Ces informations restent sur votre appareil. Pour votre cas précis, parlez-en au médecin du travail du rectorat et au syndicat.", c:"ps", o:[
+  {t:"Je suis ou je vais être en arrêt long",go:"R:clm,prevoyance"},
+  {t:"Je reprends après un arrêt",go:"R:tpt,allegement"},
+  {t:"Je travaille, mais c'est difficile",go:"R:allegement,tpt,rqth"},
+  {t:"Je ne peux plus faire classe pour un temps",go:"R:poste_adapte,allegement"},
+  {t:"Je ne pourrai plus enseigner",go:"R:reclassement,poste_adapte"},
+  {t:"J'ai ou je pourrais avoir un handicap reconnu",go:"R:rqth,tp_droit"},
+  {t:"Je veux me protéger pour l'avenir",go:"R:prevoyance"}]},
+ cumul:{q:"Quelle activité voulez-vous faire à côté ?", s:"Les règles sont les mêmes à temps plein et à temps partiel, sauf pour créer une entreprise.", c:"pc", o:[
+  {t:"Bénévolat, écrire, composer, créer",d:"Roman, chansons, peinture, logiciel…",go:"R:cumul_libre"},
+  {t:"Donner des cours, entraîner, former",d:"Cours particuliers, club de sport, formation",go:"R:cumul_acc"},
+  {t:"Vendre ce que je fabrique ou produis",d:"Bijoux, confitures, petits travaux, services à la personne",go:"R:cumul_acc"},
+  {t:"Créer ou reprendre une entreprise",d:"Gîte, commerce, activité libérale",go:"R:cumul_ent,dispo_ent"},
+  {t:"Être salarié dans une entreprise privée",d:"Serveur, vendeur…",go:"R:cumul_non"}]},
+ p3:{q:"Vers quoi voulez-vous aller ?", c:"p3", o:[
+  {t:"Enseigner autrement",d:"Autre degré, agrégation, élèves à besoins particuliers, étranger…",go:"p3a"},
+  {t:"Diriger, encadrer",d:"École, établissement, vie scolaire",go:"p3b"},
+  {t:"Un autre métier public",d:"Mairie, autre ministère, hôpital",go:"R:detachement,cfp"},
+  {t:"Un métier hors de la fonction publique",go:"R:cfp,cpf,dispo_cp"},
+  {t:"Changer pour raison de santé",go:"R:poste_adapte,reclassement"}]},
+ p3a:{q:"Comment voulez-vous enseigner autrement ?", c:"p3", o:[
+  {t:"Passer de l'école au collège-lycée, ou l'inverse",go:"R:concours"},
+  {t:"Devenir professeur agrégé",go:"R:concours"},
+  {t:"Avec des élèves handicapés ou en difficulté",go:"R:cappei"},
+  {t:"Former les collègues",go:"R:formateur"},
+  {t:"Enseigner à l'étranger",go:"R:etranger"},
+  {t:"Enseigner à l'université",go:"R:sup"}]},
+ p3b:{q:"Quel poste vous attire ?", c:"p3", o:[
+  {t:"Directeur d'école",go:"R:directeur,ff"},
+  {t:"Chef d'établissement ou adjoint",go:"R:perdir,ff"},
+  {t:"Conseiller principal d'éducation ou psychologue",go:"R:cpe"}]},
+ p4:{q:"Comment voyez-vous votre départ ?", c:"p4", o:[
+  {t:"Partir avec une indemnité, si possible",go:"R:rc,demission"},
+  {t:"Partir vite, sans négocier",go:"R:demission,rc"},
+  {t:"J'hésite : je voudrais essayer avant",d:"Tester un projet sans tout lâcher",go:"R:dispo_cp,cumul_ent,rc"}]}
+};
+
+/* ---------- les dispositifs ---------- */
+var R = {
+ naissance:{c:"p1",t:"Congé supplémentaire de naissance",en:"Nouveau en 2026 : un congé en plus, pour chaque parent, après la naissance.",pay:"70 % le 1er mois, 60 % le 2e",droit:1,
+  cond:["1 ou 2 mois pour chaque parent, en une ou deux fois.","À commencer dans les 9 mois après la naissance.","Il s'ajoute au congé de maternité (16 semaines pour un 1er ou 2e enfant, salaire complet) ou de paternité."],
+  quand:"1 mois avant, ou 15 jours s'il suit directement le congé de paternité.",
+  steps:["Demande écrite à son supérieur (chef d'établissement ou inspecteur)."],
+  ex:"Avec un traitement de 2 500 € brut : environ 1 750 € le 1er mois, 1 500 € le 2e.",link:["Congé supplémentaire de naissance",SP+"F39693"]},
+ parental:{c:"p1",t:"Congé parental",en:"S'arrêter pour élever son enfant, jusqu'à ses 3 ans.",pay:"Sans salaire",droit:1,payNote:"Une aide de la caisse d'allocations familiales est possible.",
+  cond:["Par périodes de 2 à 6 mois, jusqu'aux 3 ans de l'enfant.","Compte pour l'avancement, jusqu'à 5 ans sur la carrière.","Ouvert au père comme à la mère."],
+  quand:"2 mois avant le début ; 1 mois avant chaque renouvellement.",
+  steps:["Demande écrite par la voie hiérarchique.","Renouveler à chaque période."],
+  ex:"Julie prend 6 mois, qu'elle peut renouveler jusqu'aux 3 ans de son fils. Personne ne peut le lui refuser.",link:["Congé parental",SP+"F517"]},
+ dispo_droit:{c:"p1",t:"Disponibilité de droit",en:"S'arrêter pour élever un enfant de moins de 12 ans, soigner un proche ou suivre son conjoint.",pay:"Sans salaire",droit:1,
+  cond:["3 ans, renouvelables tant que la situation dure.","Pour élever un enfant : jusqu'à 3 ans par enfant comptent pour la retraite.","On perd son poste : le retour passe par le mouvement."],
+  quand:"Pas de délai fixé par un texte : suivre la note de service de l'académie.",
+  steps:["Demande écrite avec les justificatifs (acte de naissance, certificat médical du proche, attestation de l'employeur du conjoint).","Demander sa réintégration 3 mois avant la fin."],
+  link:["Disponibilité",SP+"F544"]},
+ dispo_cp:{c:"p1",t:"Disponibilité pour convenances personnelles",en:"S'arrêter sans donner de motif.",pay:"Sans salaire",droit:0,
+  cond:["5 ans au plus, renouvelables, 10 ans sur toute la carrière.","On peut travailler ailleurs (activité compatible, en prévenant l'administration).","L'avancement continue 5 ans au plus si l'on travaille au moins 600 heures par an.","On perd son poste : le retour passe par le mouvement."],
+  quand:"Un préavis de 3 mois peut être exigé. Date de dépôt dans la note de service de l'académie, souvent en début d'année pour la rentrée.",
+  steps:["Lire la note de service de l'académie.","Demande écrite par la voie hiérarchique.","Sans réponse sous 2 mois, c'est accepté.","Demander sa réintégration 3 mois avant la fin."],
+  warn:"Vous pensez partir ensuite avec une rupture conventionnelle ? Demandez-la avant la disponibilité : l'indemnité se calcule sur le salaire de l'année précédente.",
+  link:["Disponibilité",SP+"F544"]},
+ dispo_ent:{c:"p1",t:"Disponibilité pour créer ou reprendre une entreprise",en:"S'arrêter pour lancer son activité.",pay:"Sans salaire",droit:0,
+  cond:["2 ans au plus.","Avec la disponibilité pour convenances personnelles, 5 ans au plus à la suite.","L'avancement peut continuer pendant la création."],
+  quand:"Préavis de 3 mois possible ; réponse sous 2 mois.",steps:["Demande écrite, avec le projet."],
+  ex:"Karim prend 2 ans pour créer son gîte, puis 3 ans pour convenances personnelles : 5 ans au total.",link:["Disponibilité",SP+"F544"]},
+ cfp:{c:"p1",t:"Congé de formation professionnelle",en:"Arrêter d'enseigner pour suivre une formation, même sans rapport avec le métier.",pay:"85 % pendant un an",droit:0,
+  cond:["3 ans de services à temps plein dans la fonction publique. Aucune condition d'âge.","Projet personnel ou professionnel, sans lien obligatoire avec l'enseignement.","3 ans au plus sur la carrière, dont 12 mois payés : 85 % du traitement brut, 2 778,62 € brut par mois au plus.","Travailleurs handicapés : 2 ans payés (100 % puis 85 %).","Il paie le salaire, pas les frais : pour les frais, voir le compte personnel de formation."],
+  quand:"Au moins 4 mois avant, dans la campagne annuelle de l'académie. Places limitées.",
+  steps:["Trouver la formation et ses dates.","Répondre à la campagne de l'académie.","En cas de refus, redemander l'année suivante."],
+  warn:"Après le congé, il faut rester 3 fois la durée payée dans la fonction publique, sinon rembourser. Près de la retraite, faites le calcul.",
+  ex:"Traitement 2 500 € brut → 2 125 € brut par mois. Un an payé = 3 ans à faire ensuite.",link:["Congé de formation",SP+"F3026"]},
+ cpf:{c:"p1",t:"Compte personnel de formation",en:"Faire payer les frais d'une formation par le rectorat.",pay:"Paie les frais, pas le salaire",droit:0,
+  cond:["25 heures par an, jusqu'à 150 heures. Vos heures : moncompteformation.gouv.fr.","Le rectorat paie les frais pédagogiques : 25 € de l'heure et 1 500 € par formation et par an au plus, le plus petit des deux.","Déplacements, repas et hébergement restent à votre charge.","Formation pendant le service, avec accord : salaire maintenu. Le soir ou l'été : rien de plus."],
+  quand:"Campagne annuelle du rectorat, au printemps.",
+  steps:["Choisir la formation et demander un devis.","Remplir le dossier de la campagne (projet, devis, dates).","Le refus doit être motivé et peut être contesté. Après deux refus de suite, un troisième demande l'avis des représentants du personnel."],
+  calc:"cpf",ex:"Une formation de 40 heures à 1 400 € : le rectorat paie 1 000 € (40 × 25 €).",link:["Compte personnel de formation","https://www.justice.fr/fiche/compte-personnel-formation-cpfdans-fonction-publique-etat-fpe"]},
+ tp_droit:{c:"p2",t:"Temps partiel de droit",en:"Travailler moins sans pouvoir être refusé.",pay:"Payé en proportion (80 % → 85,7 %)",droit:1,
+  cond:["Pour un enfant de moins de 3 ans, pour soigner un proche, ou avec un handicap reconnu (après avis du médecin du travail).","Quotités : 50, 60, 70 ou 80 %.","À l'école : par demi-journées entières, donc souvent 50, 75 ou 80 %. Au collège et au lycée : en heures entières."],
+  quand:"Avant le 31 mars pour la rentrée, souvent dès janvier dans le second degré : voir la note de service.",
+  steps:["Formulaire de la campagne de temps partiel, avec le justificatif.","Le temps partiel est accordé pour l'année scolaire."],calc:"tp",link:["Temps partiel",SP+"F486"]},
+ tp_auto:{c:"p2",t:"Temps partiel sur autorisation",en:"Travailler moins sans avoir à donner de motif.",pay:"Payé en proportion (80 % → 85,7 %)",droit:0,
+  cond:["Quotités de 50 à 90 %.","Refus possible pour les besoins du service, après un entretien et par écrit motivé.","En cas de refus : recours gracieux, puis commission administrative paritaire.","À l'école : par demi-journées entières (50 %, 75 %, parfois 80 %)."],
+  quand:"Avant le 31 mars pour la rentrée, souvent dès janvier : voir la note de service.",
+  steps:["Formulaire de la campagne de temps partiel.","Préciser ce que vous préférez en cas de refus de la quotité demandée."],calc:"tp",link:["Temps partiel",SP+"F486"]},
+ retraite_prog:{c:"p2",t:"Retraite progressive",en:"Travailler moins à partir de 60 ans et toucher une partie de sa pension.",pay:"Salaire + part de pension",droit:0,
+  cond:["60 ans et 150 trimestres, tous régimes confondus.","Travailler entre 50 et 90 % : le temps partiel, lui, peut être refusé.","On touche la part de pension non travaillée : à 80 %, 20 % de la pension.","Aucune autre activité professionnelle. Reprendre à temps plein y met fin, définitivement."],
+  quand:"Au moins 6 mois avant. Le temps partiel se demande au printemps précédent : s'y prendre près d'un an à l'avance.",
+  steps:["Vérifier ses trimestres sur info-retraite.fr.","Demander le temps partiel dans la campagne du printemps.","Déposer la demande de retraite progressive au moins 6 mois avant."],calc:"rp",
+  ex:"Sophie, 3 000 € brut, pension 2 100 € : à 80 %, 2 571 € + 420 € = 2 991 € par mois.",link:["Retraite progressive",SP+"F37400"]},
+ clm:{c:"ps",t:"Congé de longue maladie",en:"Pour une maladie qui demande des soins longs.",pay:"100 % la 1re année, puis 60 %",droit:0,
+  cond:["3 ans au plus.","Traitement : 100 % la 1re année, puis 60 % pendant 2 ans. Primes : 33 % puis 60 %.","Avec la prévoyance du ministère : 80 % de la rémunération, primes comprises, les 2e et 3e années.","On garde son poste."],
+  quand:"Dès que la maladie est connue.",steps:["Demande écrite avec un certificat du médecin.","Avis du conseil médical."],
+  ex:"Traitement 2 400 € brut : 2 400 € la 1re année, puis 1 440 €.",link:["Congé de longue maladie",SP+"F18089"]},
+ prevoyance:{c:"ps",t:"La prévoyance du ministère",en:"Une assurance facultative qui complète le salaire en cas d'arrêt long. À ne pas confondre avec la mutuelle santé.",pay:"Jusqu'à 80 % de la rémunération",droit:0,payLabel:"Facultative",
+  cond:["Depuis le 1er mai 2026, assurée par MGEN, MAGE et CNP.","Longue maladie : 100 % la 1re année, puis 80 % (primes comprises).","Option : 80 % pendant le demi-traitement d'un arrêt ordinaire et les 4e et 5e années de longue durée.","Prix : 0,95 % du salaire brut (1,58 % avec l'option), l'employeur paie 7 € par mois."],
+  quand:"Quand on va bien : une fois malade, il est trop tard.",steps:["S'informer sur la page du ministère.","Adhérer dans son espace MGEN."],
+  ex:"Pour 2 000 € brut : 19 € par mois, soit 12 € après la participation de l'employeur.",link:["Questions-réponses du ministère","https://www.education.gouv.fr/PSC-pr%C3%A9voyance-FAQ"]},
+ tpt:{c:"ps",t:"Temps partiel thérapeutique",en:"Reprendre en douceur, à temps partiel, en étant payé en entier.",pay:"100 % du salaire",droit:0,
+  cond:["Prescrit par le médecin, qui fixe la quotité (au moins un mi-temps).","Par périodes de 1 à 3 mois, un an au plus.","Les droits se reconstituent après un an de travail."],
+  quand:"Avant la reprise.",steps:["Demande avec le certificat médical.","Avis du médecin agréé ou du conseil médical."],
+  ex:"Paul reprend après 6 mois d'arrêt, à mi-temps pendant 3 mois, payé 100 %.",link:["Temps partiel thérapeutique","https://www.fonction-publique.gouv.fr/etre-agent-public/ma-protection-sociale/temps-partiel-pour-raison-therapeutique"]},
+ allegement:{c:"ps",t:"Allègement de service",en:"Moins d'heures de cours pendant une année, pour raison de santé.",pay:"Salaire complet",droit:0,
+  cond:["Jusqu'à un tiers du service, pour une année scolaire.","Mesure exceptionnelle, non renouvelée automatiquement.","Ne se cumule pas avec un temps partiel ; pas d'heures supplémentaires.","À l'école : par demi-journées entières."],
+  quand:"En début d'année civile pour la rentrée (Aisne : avant le 2 février 2026).",steps:["Dossier de la direction départementale ou du rectorat.","Avis du médecin du travail."],
+  ex:"Nadia, 18 h de cours au collège : 12 h, payées comme 18 h. Marc, professeur des écoles : 6 demi-journées au lieu de 8.",link:["Adaptation du poste de travail","https://www.education.gouv.fr/vie-professionnelle-et-situation-personnelle-adaptation-du-poste-de-travail-4484"]},
+ poste_adapte:{c:"ps",t:"Poste adapté",en:"Travailler hors de la classe pour un temps, le temps de se soigner ou de préparer autre chose.",pay:"Traitement gardé",droit:0,
+  cond:["Courte durée : 1 an, renouvelable, 3 ans au plus. Longue durée : 4 ans, renouvelables.","Par exemple dans un service du rectorat, un centre de documentation, au Centre national d'enseignement à distance.","Dans le premier degré, on perd son poste d'école."],
+  quand:"En début d'année civile pour la rentrée : voir la note de service.",steps:["Dossier avec l'avis du médecin du travail.","Construire un projet : retour en classe ou autre métier."],
+  ex:"Sylvie a perdu sa voix pour un temps : un an dans un service du rectorat, payée pareil.",link:["Adaptation du poste de travail","https://www.education.gouv.fr/vie-professionnelle-et-situation-personnelle-adaptation-du-poste-de-travail-4484"]},
+ reclassement:{c:"ps",t:"Reclassement",en:"Changer de métier quand on ne peut plus enseigner.",pay:"1 an payé pour s'y préparer",droit:1,
+  cond:["Il faut une inaptitude constatée par le conseil médical (la reconnaissance de handicap ne suffit pas).","Période de préparation d'un an : traitement et primes maintenus ; formations, stages, mises en situation.","Elle peut se faire dans une autre administration : autre ministère, collectivité, hôpital.","Puis un poste dans un autre métier, y compris hors de l'Éducation nationale."],
+  quand:"Dès que le retour en classe paraît impossible.",steps:["En parler au médecin du travail du rectorat.","La préparation peut commencer avant l'avis du conseil médical, à votre demande."],
+  ex:"Une professeure qui ne peut plus parler devant une classe devient secrétaire administrative au rectorat, ou rejoint une mairie.",link:["Reclassement","https://www.fonction-publique.gouv.fr/reclassement-des-fonctionnaires-inaptes-physiquement"]},
+ rqth:{c:"ps",t:"Faire reconnaître son handicap",en:"La reconnaissance de la qualité de travailleur handicapé ouvre des droits au travail.",pay:"Ne change pas le salaire",droit:1,payLabel:"Démarche",
+  cond:["Droits ouverts : temps partiel de droit, 100 points sur chaque vœu de mutation, aménagement du poste, accès prioritaire au congé de formation, retraite anticipée possible dès 55 ans sous conditions.","Valable de 1 à 10 ans, parfois à vie. Le renouvellement se demande environ 6 mois avant la fin.","La maladie n'apparaît jamais sur la décision."],
+  quand:"Délai souvent de 4 à 6 mois : anticipez avant le mouvement ou la campagne de temps partiel.",
+  steps:["Le médecin remplit le certificat médical (le médecin du travail peut y joindre son avis).","Envoyer à la maison départementale des personnes handicapées : formulaire unique (Cerfa 15692), certificat de moins d'un an, pièce d'identité, justificatif de domicile. Garder le récépissé.","Transmettre la décision au rectorat (correspondant handicap). C'est un choix, et c'est confidentiel."],
+  link:["Reconnaissance de travailleur handicapé","https://www.monparcourshandicap.gouv.fr/index.php/aides/la-reconnaissance-de-la-qualite-de-travailleur-handicape-rqth"]},
+ cumul_libre:{c:"pc",t:"Activité libre",en:"Vous pouvez la faire sans rien demander, à temps plein comme à temps partiel.",pay:"Salaire inchangé",droit:1,payLabel:"Oui, sans rien demander",
+  cond:["Bénévolat dans une association.","Créer des œuvres : écrire, composer, peindre, créer un logiciel. Les droits d'auteur sont permis.","Toujours en dehors des heures de service."],
+  warn:"Vendre ses services (par exemple développer un site pour un client) n'est plus une création d'œuvre : il faut une autorisation.",link:["Cumul d'activités",SP+"F1648"]},
+ cumul_acc:{c:"pc",t:"Activité accessoire, avec autorisation",en:"Possible même à temps plein, si elle est dans la liste officielle.",pay:"Salaire inchangé",droit:0,payLabel:"Oui, avec autorisation",
+  cond:["Exemples de la liste : enseignement et formation, encadrement sportif ou culturel, vente de ce qu'on fabrique ou produit, petits travaux chez des particuliers, services à la personne, expertise, activité agricole, conduite de transport scolaire.","Toujours en dehors des heures de service.","Une micro-entreprise est possible pour ces activités, sans passer à temps partiel."],
+  quand:"Avant de commencer.",steps:["Demande écrite à son supérieur : nature de l'activité, durée, rémunération.","Sans réponse au bout d'un mois, c'est un refus."],
+  ex:"Karim donne des cours de guitare payés le samedi : il demande l'autorisation, même à temps plein.",link:["Cumul d'activités",SP+"F1648"]},
+ cumul_ent:{c:"pc",t:"Créer ou reprendre une entreprise en gardant son poste",en:"Possible, mais seulement à temps partiel.",pay:"Salaire à temps partiel",droit:0,payLabel:"Temps partiel obligatoire",
+  cond:["Temps partiel d'au moins un mi-temps (de 50 à 90 %).","Autorisation de 3 ans, renouvelable 1 an. Ensuite : choisir. Nouvelle autorisation possible seulement après 3 ans.","Commerce, artisanat, activité libérale, reprise de l'entreprise familiale."],
+  quand:"Avant de créer l'entreprise ; la demande de temps partiel au printemps.",steps:["Demande écrite avec la description du projet.","Sans réponse au bout de 2 mois, c'est un refus.","En cas de doute, l'administration consulte le référent déontologue."],
+  ex:"Karim ouvre des chambres d'hôtes en passant à 80 % : payé 85,7 % pendant 3 ans, plus 1 an.",link:["Cumul d'activités",SP+"F1648"]},
+ cumul_non:{c:"pc",t:"Emploi salarié dans le privé",en:"En principe interdit, même à mi-temps.",pay:"Non, en principe",droit:0,payLabel:"Non",
+  cond:["Être serveur, vendeur ou employé dans une entreprise privée n'est pas dans la liste des activités autorisables.","Être à temps partiel ne change rien.","Une activité exercée sans autorisation expose à reverser les sommes et à une sanction."],
+  warn:"Un régime plus souple existe pour les emplois créés à 24 h 30 par semaine ou moins, mais il ne vise pas un temps partiel choisi. Posez la question au syndicat.",link:["Cumul d'activités",SP+"F1648"]},
+ concours:{c:"p3",t:"Les concours internes",en:"Réservés à ceux qui sont déjà en poste.",pay:"Salaire du nouveau corps",droit:0,payLabel:"Sur concours",
+  cond:["Professeur de collège ou de lycée : une licence et 3 ans de services publics. Un dossier de 8 pages sur son expérience, puis un oral.","Professeur des écoles : une licence et 3 ans de services publics.","Agrégation : être fonctionnaire, un master et 5 ans de services publics.","Impossible en disponibilité le jour de la première épreuve (agrégation)."],
+  quand:"Inscriptions jusqu'au 25 novembre 2026 à midi.",steps:["S'inscrire sur devenirenseignant.gouv.fr.","Préparer le dossier sur son expérience."],
+  ex:"Julie, professeure des écoles avec une licence et 6 ans de métier, peut passer le concours interne du collège.",link:["Le concours du collège-lycée","https://www.devenirenseignant.gouv.fr/enseigner-au-college-ou-au-lycee-general-le-capes-1394"]},
+ cappei:{c:"p3",t:"Devenir enseignant spécialisé",en:"Enseigner à des élèves handicapés ou en grande difficulté (classes Ulis, Segpa…).",pay:"Salaire maintenu",droit:0,
+  cond:["Être enseignant, premier ou second degré.","Il faut obtenir un poste spécialisé au mouvement : c'est la condition pour partir en formation.","Un an de formation en travaillant sur le poste : 300 heures, à l'institut de formation d'Amiens et à distance.","Un examen en fin d'année : si on réussit, le poste devient le sien."],
+  quand:"Candidature en début d'année (Amiens 2026 : du 29 janvier au 6 mars).",
+  steps:["Candidater, avec l'avis de l'inspecteur.","Demander un poste spécialisé au mouvement.","Semaine de préparation en juin, puis l'année de formation."],link:["Devenir enseignant spécialisé","https://eduscol.education.gouv.fr/5484/devenir-enseignant-specialise"]},
+ formateur:{c:"p3",t:"Devenir formateur",en:"Accompagner les collègues et les débutants.",pay:"Salaire + indemnité",droit:0,payLabel:"Sur certificat",
+  cond:["Premier degré : maître formateur, avec 5 ans de services en classe et un certificat (Cafipemf). Impossible en disponibilité.","Second degré : formateur académique, avec 5 ans de services et un certificat (Caffa)."],
+  quand:"Second degré : inscriptions en septembre. Premier degré : voir la note de l'académie.",steps:["S'inscrire à l'examen.","Préparer le certificat, souvent sur deux ans."],link:["Exemple de note (formateur académique)","https://www.ac-nantes.fr/media/27146/download"]},
+ etranger:{c:"p3",t:"Enseigner à l'étranger",en:"Dans un établissement français à l'étranger.",pay:"Payé par l'établissement d'accueil",droit:0,
+  cond:["Être titulaire, avec de l'expérience en France.","On candidate auprès d'un opérateur ou d'un établissement, puis on demande son détachement.","Détachement de 3 ans, renouvelable une fois."],
+  quand:"Campagnes de recrutement en début d'année civile.",steps:["Candidater auprès de l'opérateur.","Demander son détachement."],link:["Être détaché à l'étranger","https://www.education.gouv.fr/etre-detache-dans-le-reseau-de-l-enseignement-francais-l-etranger-efe-12092"]},
+ sup:{c:"p3",t:"Enseigner à l'université",en:"Pour les professeurs du second degré.",pay:"Salaire de son corps",droit:0,payLabel:"Sur candidature",
+  cond:["Candidater sur un poste publié par une université.","Deux campagnes par an."],steps:["Consulter les postes publiés.","Envoyer sa candidature à l'université."],
+  link:["Page officielle","https://www.enseignementsup-recherche.gouv.fr/fr/personnels-enseignants-du-second-degre-affectes-dans-le-superieur-conditions-d-affectation-45653"]},
+ directeur:{c:"p3",t:"Directeur d'école",en:"Diriger une école en restant enseignant.",pay:"Salaire + bonification et indemnité",droit:0,payLabel:"Liste d'aptitude",
+  cond:["3 ans de services, puis l'inscription sur une liste d'aptitude, valable 3 ans.","Faisant fonction pendant un an : inscription possible sans condition d'ancienneté."],
+  quand:"Note de service de la direction départementale, en début d'année scolaire.",steps:["Demander l'inscription sur la liste d'aptitude.","Entretien.","Demander un poste de directeur au mouvement."],link:["Exemple de note de service","https://sgen-cfdt.fr/contenu/uploads/sites/28/2025/09/Circulaire-DSDEN92-DPEA-n%C2%B0-2025-32-relative-a-linscription-sur-la-liste-daptitude-aux-fonctions-de-directeur-decole-de-deux-classes-et-plus-pour-lannee-2026.pdf"]},
+ perdir:{c:"p3",t:"Chef d'établissement ou adjoint",en:"Le concours de personnel de direction. Pas besoin d'être professeur.",pay:"Salaire du nouveau corps",droit:0,payLabel:"Sur concours",
+  cond:["Enseignant, conseiller principal d'éducation ou psychologue de l'Éducation nationale, titulaire, avec 4 ans de services.","Un écrit de 5 heures (note de synthèse), puis un exposé et un entretien.","Impossible si l'on est en disponibilité."],
+  quand:"Dates d'inscription différentes de celles des concours enseignants : voir la page du ministère.",steps:["S'inscrire au concours.","Essayer d'abord comme faisant fonction, si possible."],link:["Concours de personnel de direction","https://www.education.gouv.fr/le-concours-de-personnels-de-direction-9947"]},
+ ff:{c:"p3",t:"Faisant fonction",en:"Essayer le poste avant de changer, en gardant le sien.",pay:"Salaire + indemnité d'intérim",droit:0,
+  cond:["Remplacer un directeur ou un chef d'établissement absent, ou tenir un poste vacant, de quelques semaines à une année.","On reste titulaire de son poste et on garde son salaire."],
+  quand:"Les rectorats publient un appel à candidatures chaque année.",steps:["Répondre à l'appel à candidatures, ou se signaler à son inspecteur."],link:["Exemple de l'académie de Bordeaux","https://www.ac-bordeaux.fr/media/16980/download"]},
+ cpe:{c:"p3",t:"Conseiller principal d'éducation ou psychologue",en:"Changer de métier dans l'Éducation nationale, par un concours interne.",pay:"Salaire du nouveau corps",droit:0,payLabel:"Sur concours",
+  cond:["Réussir le concours interne correspondant."],quand:"Inscriptions jusqu'au 25 novembre 2026 à midi.",steps:["S'inscrire sur devenirenseignant.gouv.fr."],link:["Devenir enseignant (concours)","https://www.devenirenseignant.gouv.fr/"]},
+ detachement:{c:"p3",t:"Détachement",en:"Travailler pour une autre administration en restant fonctionnaire, avec le droit de revenir.",pay:"Payé par l'administration d'accueil",droit:0,
+  cond:["Être titulaire. Un poste de même niveau (catégorie A) : mairie, département, autre ministère, hôpital.","Jusqu'à 5 ans, renouvelables. La carrière d'enseignant continue d'avancer.","Après 5 ans, l'accueil doit proposer d'y entrer pour de bon (intégration). On peut refuser."],
+  quand:"Réponse sous 2 mois, sinon c'est accepté ; préavis de 3 mois possible. Pour revenir ou renouveler : 3 mois avant la fin.",
+  steps:["Trouver le poste et obtenir l'accord de l'accueil.","Demande écrite aux deux administrations."],
+  ex:"Thomas devient attaché à la mairie pour 3 ans. Il est payé par la mairie et peut ensuite revenir enseigner.",link:["Détachement",SP+"F543"]},
+ rc:{c:"p4",t:"Rupture conventionnelle",en:"Un accord entre vous et l'administration. Personne n'est obligé d'accepter.",pay:"Indemnité + chômage possible",droit:0,payLabel:"Se négocie",
+  cond:["Indemnité entre un minimum et un maximum : 1/24 du salaire annuel par année d'ancienneté au plus, ancienneté comptée jusqu'à 24 ans.","Pas pour les stagiaires, ceux qui ont l'âge et les trimestres d'une retraite complète, ou ceux qui ont un engagement de servir en cours.","En cas de retour dans la fonction publique de l'État dans les 6 ans : l'indemnité doit être remboursée."],
+  quand:"Entretien entre 10 jours et 1 mois après la demande ; signature au moins 15 jours après ; 15 jours pour changer d'avis.",
+  steps:["Demande écrite au rectorat.","Venir à l'entretien avec ses deux chiffres (minimum et maximum), son projet, et une date de départ.","Se faire accompagner par un conseiller du syndicat.","Rien n'oblige à signer."],calc:"rc",
+  warn:"Demandez-la avant une disponibilité ou un congé parental : l'indemnité se calcule sur le salaire de l'année précédente.",link:["Rupture conventionnelle",SP+"F31094"]},
+ demission:{c:"p4",t:"Démission",en:"Vous demandez à partir ; l'administration doit accepter.",pay:"Ni indemnité ni chômage",droit:0,payLabel:"Doit être acceptée",
+  cond:["L'administration a 4 mois pour répondre. Sans réponse, la demande tombe : il faut la refaire.","Une démission acceptée est irrévocable : on perd son concours.","Chômage seulement si la démission est reconnue légitime (par exemple pour suivre son conjoint muté).","Droits à la retraite gardés à partir de 2 ans de services."],
+  quand:"Au moins 4 mois avant la date voulue.",steps:["Lettre de démission sans ambiguïté, avec la date souhaitée.","Si elle est refusée : saisir la commission administrative paritaire."],
+  warn:"Ne jamais simplement arrêter de venir : l'abandon de poste mène à une radiation, sans indemnité ni chômage.",link:["Démission","https://www.justice.fr/fiche/demission-fonctionnaire-agent-contractuel"]}
+};
+
+/* ---------- état ---------- */
+var hist = ["start"], fiche = [];
+try { fiche = JSON.parse(localStorage.getItem("msc-fiche") || "[]"); $("note").value = localStorage.getItem("msc-note") || ""; } catch (e) {}
+function $(id){return document.getElementById(id);}
+function save(){ try{localStorage.setItem("msc-fiche",JSON.stringify(fiche));localStorage.setItem("msc-note",$("note").value);}catch(e){} $("nb").textContent=fiche.length; }
+function esc(s){return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;");}
+function colorOf(key){return C[key]||C.p1;}
+function fmt(x){return Math.round(x).toLocaleString("fr-FR")+" €";}
+function toast(t){var e=$("toast");e.textContent=t;e.classList.add("show");setTimeout(function(){e.classList.remove("show");},1600);}
+
+function labelOf(id){
+  if(id.indexOf("R:")===0) return "Vos options";
+  return {start:"Mon projet",p1:"Faire une pause",enfant:"Mon enfant",p2:"Travailler moins",retraite:"La retraite",sante:"Santé",cumul:"Activité à côté",p3:"Changer de métier",p3a:"Enseigner autrement",p3b:"Encadrer",p4:"Quitter"}[id]||id;
+}
+function render(){
+  var id=hist[hist.length-1], m=$("main");
+  $("back").style.display = hist.length>1 ? "":"none";
+  $("crumbs").innerHTML = hist.map(function(h){return "<span>"+esc(labelOf(h))+"</span>";}).join("");
+  if(id.indexOf("R:")===0){ renderRes(id.slice(2).split(",")); }
+  else {
+    var n=N[id], h='<div class="step"><h2 class="q">'+esc(n.q)+'</h2>'+(n.s?'<p class="qs">'+esc(n.s)+'</p>':'<p class="qs"></p>');
+    if(id==="start") h='<div class="step"><div class="intro">Ce guide reprend la formation <b>« Moduler sa carrière »</b>. À chaque étape, choisissez une réponse : à la fin, vous voyez ce que vous pouvez demander, <b>ce que vous toucherez</b>, quand le demander et comment. Gardez ce qui vous intéresse dans <b>Ma fiche</b>.</div><h2 class="q">'+esc(n.q)+'</h2><p class="qs">'+esc(n.s)+'</p>';
+    h+='<div class="opts">';
+    n.o.forEach(function(o,k){
+      var c=colorOf(o.c||n.c);
+      h+='<button class="opt'+(n.big?' big':'')+'" data-k="'+k+'" style="--c:'+c[0]+';--cb:'+c[1]+'">'+(o.n?'<span class="n">'+esc(o.n)+'</span>':'')+'<b>'+esc(o.t)+'</b>'+(o.d?'<span>'+esc(o.d)+'</span>':'')+'</button>';
+    });
+    m.innerHTML=h+'</div></div>';
+    m.querySelectorAll(".opt").forEach(function(b){ b.onclick=function(){ hist.push(n.o[+b.dataset.k].go); render(); window.scrollTo({top:0,behavior:"smooth"}); }; });
+  }
+}
+function card(k){
+  var r=R[k], c=colorOf(r.c), on=fiche.indexOf(k)>=0;
+  var h='<article class="card" style="--c:'+c[0]+';--cb:'+c[1]+'"><header><h3>'+esc(r.t)+'</h3><p class="en">'+esc(r.en)+'</p></header><div class="pills"><span class="pill pay">'+esc(r.pay)+'</span>';
+  h+= r.payLabel ? '<span class="pill auto">'+esc(r.payLabel)+'</span>' : (r.droit ? '<span class="pill droit">De droit : ne peut pas être refusé</span>' : '<span class="pill auto">Sur autorisation : peut être refusé</span>');
+  h+='</div><div class="body">';
+  if(r.payNote) h+='<p style="margin:10px 0 0">'+esc(r.payNote)+'</p>';
+  h+='<h4>À savoir</h4><ul>'+r.cond.map(function(x){return "<li>"+esc(x)+"</li>";}).join("")+'</ul>';
+  if(r.quand) h+='<h4>Quand demander</h4><p style="margin:0">'+esc(r.quand)+'</p>';
+  if(r.steps) h+='<h4>La démarche</h4><ol>'+r.steps.map(function(x){return "<li>"+esc(x)+"</li>";}).join("")+'</ol>';
+  if(r.ex) h+='<div class="ex"><b>Exemple : </b>'+esc(r.ex)+'</div>';
+  if(r.calc) h+=calcHTML(r.calc);
+  if(r.warn) h+='<div class="warn"><b>Attention : </b>'+esc(r.warn)+'</div>';
+  h+='</div><div class="act"><button class="add'+(on?' on':'')+'" data-k="'+k+'">'+(on?'✓ Dans ma fiche':'+ Garder dans ma fiche')+'</button><a class="link" href="'+r.link[1]+'" target="_blank" rel="noopener">Page officielle : '+esc(r.link[0])+' ↗</a></div></article>';
+  return h;
+}
+function calcHTML(t){
+  if(t==="tp") return '<div class="calc" data-calc="tp"><b class="rub">Calculez votre salaire</b><div class="row"><label>Salaire à temps plein (brut)<input type="number" value="2500" step="50" data-in="s"></label><label>Quotité<select data-in="q"><option>50</option><option>60</option><option>70</option><option>75</option><option selected>80</option><option>90</option></select></label></div><div class="out"></div></div>';
+  if(t==="rp") return '<div class="calc" data-calc="rp"><b class="rub">Calculez votre revenu</b><div class="row"><label>Salaire à temps plein (brut)<input type="number" value="3000" step="50" data-in="s"></label><label>Pension estimée (brut)<input type="number" value="2100" step="50" data-in="p"></label><label>Quotité<select data-in="q"><option>50</option><option>60</option><option>70</option><option selected>80</option><option>90</option></select></label></div><div class="out"></div></div>';
+  if(t==="rc") return '<div class="calc" data-calc="rc"><b class="rub">Calculez votre fourchette</b><div class="row"><label>Salaire mensuel (brut)<input type="number" value="2500" step="50" data-in="s"></label><label>Années d\'ancienneté<input type="number" value="8" min="1" max="45" data-in="a"></label></div><div class="out"></div></div>';
+  if(t==="cpf") return '<div class="calc" data-calc="cpf"><b class="rub">Combien paie le rectorat ?</b><div class="row"><label>Prix de la formation<input type="number" value="1400" step="50" data-in="p"></label><label>Nombre d\'heures<input type="number" value="40" data-in="h"></label></div><div class="out"></div></div>';
+  return "";
+}
+function rate(q){ return q===80 ? 6/7 : q===90 ? 32/35 : q/100; }
+function compute(box){
+  var t=box.dataset.calc, v=function(n){var e=box.querySelector('[data-in="'+n+'"]');return e?parseFloat(e.value)||0:0;}, o=box.querySelector(".out");
+  if(t==="tp"){ var q=v("q"), r=rate(q); o.innerHTML=fmt(v("s")*r)+" brut par mois<small>À "+q+" %, on est payé "+(r*100).toFixed(1).replace(".",",")+" % du salaire.</small>"; }
+  if(t==="rp"){ var q=v("q"), a=v("s")*rate(q), b=v("p")*(1-q/100); o.innerHTML=fmt(a+b)+" brut par mois<small>Salaire "+fmt(a)+" + "+(100-q)+" % de la pension, "+fmt(b)+". Votre pension estimée : info-retraite.fr.</small>"; }
+  if(t==="rc"){ var s=v("s"), n=Math.min(24,Math.max(0,Math.floor(v("a")))), m=0;
+    for(var y=1;y<=n;y++) m+= y<=10?1/6 : y<=15?1/5 : y<=20?1/4 : 1/3;
+    o.innerHTML="Entre "+fmt(m*s)+" et "+fmt(n*s/2)+"<small>Minimum du barème et maximum (1/24 du salaire annuel par année). Ancienneté comptée jusqu'à 24 ans. Le salaire retenu est celui de l'année civile précédente.</small>"; }
+  if(t==="cpf"){ var p=v("p"), h=v("h"), pay=Math.min(p,25*h,1500); o.innerHTML=fmt(pay)+" payés par le rectorat<small>Reste à votre charge : "+fmt(Math.max(0,p-pay))+". Plafonds : 25 € de l'heure et 1 500 € par formation, sous réserve du budget de l'académie.</small>"; }
+}
+function renderRes(keys){
+  var m=$("main");
+  var h='<div class="step"><h2 class="res-h">'+(keys.length>1?"Vos options":"Votre option")+'</h2><p class="qs">'+(keys.length>1?"La plus adaptée est en premier. Gardez dans votre fiche celles qui vous intéressent.":"Gardez-la dans votre fiche si elle vous intéresse.")+'</p><div class="cards">'+keys.map(card).join("")+'</div>';
+  h+='<div class="next"><button class="pri" id="again">Explorer une autre piste</button><button id="toFiche">Voir ma fiche</button></div></div>';
+  m.innerHTML=h;
+  m.querySelectorAll(".calc").forEach(function(b){ compute(b); b.addEventListener("input",function(){compute(b);}); });
+  m.querySelectorAll(".add").forEach(function(b){ b.onclick=function(){ var k=b.dataset.k, i=fiche.indexOf(k);
+    if(i>=0){fiche.splice(i,1);b.classList.remove("on");b.textContent="+ Garder dans ma fiche";} else {fiche.push(k);b.classList.add("on");b.textContent="✓ Dans ma fiche";toast("Ajouté à ma fiche");}
+    save(); }; });
+  $("again").onclick=function(){hist=["start"];render();window.scrollTo({top:0,behavior:"smooth"});};
+  $("toFiche").onclick=openFiche;
+}
+function openFiche(){
+  var l=$("ficheList");
+  if(!fiche.length) l.innerHTML='<p style="margin-top:14px">Votre fiche est vide. Sur chaque option, cliquez sur « Garder dans ma fiche ».</p>';
+  else l.innerHTML=fiche.map(function(k){var r=R[k],c=colorOf(r.c);return '<div class="it" style="--c:'+c[0]+'"><b>'+esc(r.t)+'</b> · '+esc(r.pay)+'<br><span style="font-size:15px">Quand : '+esc(r.quand||"avant de commencer")+'</span><br><a href="'+r.link[1]+'" target="_blank" rel="noopener" style="font-size:14px">'+esc(r.link[0])+' ↗</a></div>';}).join("");
+  $("modal").classList.add("show");
+}
+function ficheText(){
+  var t="MA FICHE · Moduler sa carrière\n\n";
+  fiche.forEach(function(k){var r=R[k]; t+="• "+r.t+" : "+r.pay+"\n  Quand : "+(r.quand||"avant de commencer")+"\n  "+(r.steps?"Démarche : "+r.steps.join(" / ")+"\n  ":"")+r.link[1]+"\n\n";});
+  if($("note").value.trim()) t+="Ma prochaine démarche : "+$("note").value.trim()+"\n";
+  return t;
+}
+$("openFiche").onclick=openFiche;
+$("close").onclick=function(){$("modal").classList.remove("show");};
+$("modal").onclick=function(e){if(e.target===this)this.classList.remove("show");};
+$("clear").onclick=function(){fiche=[];save();openFiche();render();};
+$("note").oninput=save;
+$("copy").onclick=function(){var t=ficheText();
+  try{navigator.clipboard.writeText(t).then(function(){toast("Fiche copiée");},function(){fallback(t);});}catch(e){fallback(t);} };
+function fallback(t){var a=$("note"),old=a.value;a.value=t;a.select();try{document.execCommand("copy");toast("Fiche copiée");}catch(e){toast("Sélectionnez le texte pour le copier");}a.value=old;}
+$("back").onclick=function(){if(hist.length>1){hist.pop();render();}};
+$("restart").onclick=$("home").onclick=function(){hist=["start"];render();};
+document.addEventListener("keydown",function(e){if(e.key==="Escape")$("modal").classList.remove("show");});
+save(); render();
+</script>
+</body>
+</html>
